@@ -28,18 +28,39 @@ passport.use(new Auth0Strategy({
     callbackURL: process.env.AUTH_CALLBACK
 }, function (accessToken, refreshToken, exraParams, profile, done){
 
-    return done(null, profile)
-}))
+    const db = app.get('db');
 
-passport.serializeUser( function(profile, done) {
-    done(null, profile)
+    db.find_user([profile._json.email]).then( user => {
+        if (user[0]) {
+            return done(null, user[0].email)
+        } else {
+            db.create_user([
+                '',
+                '',
+                '',
+                '',
+                '',
+                '',
+                1,
+                'January',
+                2000,
+                profile._json.email
+            ]).then( user => {
+                return done(null, profile._json.email)
+            })
+        }
+    })
+}));
+
+passport.serializeUser( function(email, done) {
+    done(null, email)
 })
-passport.deserializeUser( function(profile, done) {
-    done(null, profile)
+passport.deserializeUser( function(email, done) {
+    done(null, email)
 })
 
 app.get('/api/auth/login', passport.authenticate('auth0'))
-app.get('/api/auth/callback', passport.authenticate('auth0', {
+app.get('/auth/callback', passport.authenticate('auth0', {
     successRedirect: 'http://localhost:3000/#/dashboard',
     failureRedirect: '/api/auth/login'
 }))
