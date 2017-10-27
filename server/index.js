@@ -31,11 +31,11 @@ passport.use(new Auth0Strategy({
     return done(null, profile)
 }))
 
-passport.saveUninitialized(function(id, done) {
-    done(null, id)
+passport.serializeUser( function(profile, done) {
+    done(null, profile)
 })
-passport.deserializeUser(function(id, done) {
-    done(null, id)
+passport.deserializeUser( function(profile, done) {
+    done(null, profile)
 })
 
 
