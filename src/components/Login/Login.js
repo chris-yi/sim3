@@ -1,17 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import './Login.css';
+import logo from "./../assets/logo.png";
+
 
 export default class Login extends Component {
     render() {
         return (
-            <div>
-                <div>
-                    <img />
-                    <h1>
-                        Helo
-                    </h1>
-                    <button>
-                        Login/Register
-                    </button>
+            <div className="landingBackground">
+                <div className="login">
+                    <img className="logo" src={logo} alt="logo"/>
+                    <div className="logoText">
+                        <h1 className="helo">Helo</h1>
+                    </div>
+                    <div className="loginButton">
+                    <a href="" className="loginLink">Login / Register</a>
+                    </div>
                 </div>
             </div>
         )
