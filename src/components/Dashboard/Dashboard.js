@@ -22,7 +22,9 @@ class Dashboard extends Component {
                                 <div>
                                     <h1>firstname</h1>
                                     <h1>lastname</h1>
-                                    <button>Edit Profile</button>
+                                    <a href='http://localhost:3000/#/profile' >
+                                        <button>Edit Profile</button>
+                                    </a>
                                 </div>
                             </div>
                             <div className='dashboard-lorem' >
@@ -30,7 +32,25 @@ class Dashboard extends Component {
                             </div>
                         </div>
                         <div className='dashboard-bottom' >
+                            <div>
+                                <div>
+                                    <h1>
+                                        Recommended Friends
+                                    </h1>
+                                    <div>
+                                        <p>Sorted by </p>
+                                    </div>
+                                </div>
+                                <div>
 
+                                </div>
+                            </div>
+                            <div>
+
+                            </div>
+                            <div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
