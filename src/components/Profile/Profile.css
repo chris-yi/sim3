@@ -1,44 +1,54 @@
-.dashboard-background {
+.profile-background {
     background: #f2f2f2;
     display: flex;
     padding-top: 60px;
     width: 100%;
     justify-content: center;
 }
-.dashboard-profile {
+.profile-profile {
     display: flex;
     background: white;
-    height: 150px;
+    height: 200px;
     width: 300px;
     align-items: center;
     justify-content: space-around;
 }
-.dashboard-top {
+.profile-top {
     display: flex;
-    background: red;
+    background: white;
     width: 100%;
     justify-content: space-between;
 }
-.dashboard-header{
+
+.name {
+    font-size: 14px;
+}
+
+.profile-header{
     position: absolute;
 }
-.dashboard-lorem {
+.profile-lorem {
     background: white;
     width: 400px;
-    height: 150px;
+    height: 200px;
 }
-.dashboard-profile-pic {
-    height: 100px;
-    width: 100px;
+
+.pic-div {
+    padding-left: 10px;
+}
+.profile-profile-pic {
+    height: 130px;
+    width: 130px;
     border: 3px solid #F39B78;
+
 }
-.dashboard-main {
+.profile-main {
     width: 45%;
     display: flex;
     flex-direction: column;
 }
-.dashboard-bottom {
-    background: blue;
+.profile-bottom {
+    background: white;
     width: 100%;
     height: 80vh;
     margin-top: 30px;

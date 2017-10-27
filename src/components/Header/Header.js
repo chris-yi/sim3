@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import homeImg from '../assets/home.png';
 import searchImg from '../assets/search.png';
 import './header.css';
+import {connect} from 'react-redux';
 
-export default class Header extends Component {
+class Header extends Component {
     render() {
     return (
         <div className='header-main' >
@@ -21,7 +22,7 @@ export default class Header extends Component {
                 </div>
             </div>
             <div className='header-links' >
-                <h1 className="dashboard">Dashboard</h1>
+                <h1 className="dashboard">{this.props.page}</h1>
             </div>
             <div className='header-links' >
                 <a className="logoutlink" href='http://localhost:3005/logout'>
@@ -32,3 +33,11 @@ export default class Header extends Component {
     )
     }
 }
+
+function mapStateToProps(state){
+    return{
+        page: state.page
+    }
+}
+
+export default connect(mapStateToProps) (Header);
