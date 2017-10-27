@@ -56,7 +56,9 @@ passport.serializeUser( function(email, done) {
     done(null, email)
 })
 passport.deserializeUser( function(email, done) {
-    done(null, email)
+    app.get('db').find_session_user([email]).then( user => {
+        done(null, user[0])
+    })
 })
 
 app.get('/api/auth/login', passport.authenticate('auth0'))
@@ -65,6 +67,13 @@ app.get('/auth/callback', passport.authenticate('auth0', {
     failureRedirect: '/api/auth/login'
 }))
 
+app.get('/auth/me', (req, res) => {
+    if (req.user) {
+        return res.status(200).send(req.user);
+    } else {
+        return res.status(401).send('Need to log in.')
+    }
+})
 
 
 const PORT = 3005
