@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header.js';
+import './Dashboard.css'
 
 export default class Dashboard extends Component {
     render() {
         return (
             <div>
-            <Header />
+            <Header className='dashboard-header' />
                 <div className='dashboard-background' >
                     <div>
-                        <div>
-                            <div>
-                                <img src='https://robohash.org/me' alt='profile pic' />
+                        <div className='dashboard-top' >
+                            <div className='dashboard-profile' >
+                                <div><img src='https://robohash.org/me' alt='profile pic' /></div>
                                 <div>
                                     <h1>firstname</h1>
                                     <h1>lastname</h1>
