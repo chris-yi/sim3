@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header.js';
-import './Dashboard.css'
+import './Dashboard.css';
+import {connect} from 'react-redux';
+import {getCurrentPage} from '../../ducks/users.js' 
 
-export default class Dashboard extends Component {
+class Dashboard extends Component {
+
+
+    componentDidMount(){
+        this.props.getCurrentPage('Dashboard')
+    }
     render() {
         return (
             <div>
@@ -31,3 +38,9 @@ export default class Dashboard extends Component {
         )
     }
 }
+
+function mapStateToProps(state){
+    
+}
+
+export default connect(mapStateToProps, {getCurrentPage})(Dashboard);
