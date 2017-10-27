@@ -38,3 +38,8 @@
     font-size: 17px;
     font-weight: 400;
 }
+
+.logoutlink {
+    color: white;
+    text-decoration: none;
+}
