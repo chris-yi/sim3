@@ -13,7 +13,7 @@ export default class Login extends Component {
                         <h1 className="helo">Helo</h1>
                     </div>
                     <div className="loginButton">
-                        <a href={process.env.APP_LOGIN} className="loginLink" >Login/Register</a>
+                        <a href='http://localhost:3005/api/auth/login' className="loginLink" >Login/Register</a>
                     </div>
                 </div>
             </div>
