@@ -23,9 +23,9 @@ massive(process.env.CONNECTION_STRING).then( (db) => {
 
 passport.use(new Auth0Strategy({
     domain: process.env.AUTH_DOMAIN,
-    clientId: process.env.AUTH_CLIENTID,
+    clientID: process.env.AUTH_CLIENTID,
     clientSecret: process.env.AUTH_SECRET,
-    clientURL: process.env.AUTH_CALLBACK
+    callbackURL: process.env.AUTH_CALLBACK
 }, function (accessToken, refreshToken, exraParams, profile, done){
 
     return done(null, profile)
@@ -37,6 +37,8 @@ passport.serializeUser( function(profile, done) {
 passport.deserializeUser( function(profile, done) {
     done(null, profile)
 })
+
+app.get('/api/auth/login', passport.authenticate('auth0'))
 
 
 
