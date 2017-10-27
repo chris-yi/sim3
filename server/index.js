@@ -26,5 +26,19 @@ passport.use(new Auth0Strategy({
     clientId: process.env.AUTH_CLIENTID,
     clientSecret: process.env.AUTH_SECRET,
     clientURL: process.env.AUTH_CALLBACK
-}, function ()
-)
+}, function (accessToken, refreshToken, exraParams, profile, done){
+
+    return done(null, profile)
+}))
+
+passport.saveUninitialized(function(id, done) {
+    done(null, id)
+})
+passport.deserializeUser(function(id, done) {
+    done(null, id)
+})
+
+
+
+const PORT = 3005
+app.listen(PORT, () => console.log(`Listing on port: ${PORT}`))
