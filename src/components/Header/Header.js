@@ -8,7 +8,7 @@ export default class Header extends Component {
     return (
         <div className='header-main' >
             <div className='header-left' >
-                <h1>Helo</h1>
+                <h1 className="header-helo">Helo</h1>
                 <div>
                     <a>
                         <img src={homeImg} alt='home button' />
@@ -21,10 +21,10 @@ export default class Header extends Component {
                 </div>
             </div>
             <div className='header-links' >
-                <h1>Dashboard</h1>
+                <h1 className="dashboard">Dashboard</h1>
             </div>
             <div className='header-links' >
-                <h1>Logout</h1>
+                <h1 className="logout">Logout</h1>
             </div>
         </div>
     )
