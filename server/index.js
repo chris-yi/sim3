@@ -59,7 +59,7 @@ passport.deserializeUser( function(email, done) {
     app.get('db').find_session_user([email]).then( user => {
         done(null, user[0])
     })
-})
+});
 
 app.get('/api/auth/login', passport.authenticate('auth0'))
 app.get('/auth/callback', passport.authenticate('auth0', {
@@ -79,6 +79,10 @@ app.get('/logout', (req,res) => {
     req.logOut();
     res.redirect('http://localhost:3000/')
 });
+
+app.post('/friend/add', (req,res) => {
+    app.get('db').add_friend()
+})
 
 const PORT = 3005
 app.listen(PORT, () => console.log(`Listing on port: ${PORT}`))
