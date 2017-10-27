@@ -39,8 +39,5 @@ class Dashboard extends Component {
     }
 }
 
-function mapStateToProps(state){
-    
-}
 
-export default connect(mapStateToProps, {getCurrentPage})(Dashboard);
+export default connect(null, {getCurrentPage})(Dashboard);
