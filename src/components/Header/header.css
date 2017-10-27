@@ -9,6 +9,7 @@
     height: 60px;
     color: white;
     font-weight: 300;
+    margin-bottom: 25px;
 }
 .header-left {
     display:  flex;
